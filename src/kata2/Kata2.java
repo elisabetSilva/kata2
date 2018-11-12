@@ -9,12 +9,8 @@ public class Kata2 {
         Map<Integer, Integer> histogram = new HashMap<>();
         
         //Se asigana para cada clave, un valor que representa el número de veces que se repite
-        for (int i = 0; i < data.length; i++) {
-            if(histogram.containsKey(data[i])){
-                histogram.put(data[i], histogram.get(data[i])+1); 
-            }else{
-                histogram.put(data[i], 1);
-            }
+        for (int value : data) {
+            histogram.put(value, histogram.containsKey(value) ? histogram.get(value)+1 : 1);
         }
         
        //Recorre el conjunto de claves y muestra para cada clave su valor
